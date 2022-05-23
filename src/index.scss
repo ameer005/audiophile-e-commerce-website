@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --color-primary: #d87d4a;
+  --color-primary-ligh: #fbaf85;
+
+  --color-secondary: #101010;
+  --color-dark: #000;
+
+  --color-grey-1: #f1f1f1;
+  --color-grey-2: #fafafa;
+  --color-white: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  font-family: "Manrope", sans-serif; // (400,700)
+}
+
+.main-container {
+}
