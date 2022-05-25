@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Home.module.scss";
 
-import heroImgDesk from "../../assets/images/home/desktop/image-hero.jpg";
 import ProductButton from "../../components/ProductButton/ProductButton";
 import Categories from "../../components/Categories/Categories";
 import FeaturesBox from "../../components/FeaturesBox/FeaturesBox";
@@ -25,9 +24,7 @@ const Home = () => {
       </section>
 
       {/* PRODUCTS CATEGORIES */}
-      <section className={`${styles.section_category} ut-align-center`}>
-        <Categories />
-      </section>
+      <Categories />
 
       {/* PRODUCTS GRID */}
       <section className={`${styles.section_products} ut-align-center`}>
@@ -79,9 +76,8 @@ const Home = () => {
       </section>
 
       {/* FEATUREs SECTION */}
-      <section className={`${styles.section_features} ut-align-center`}>
-        <FeaturesBox />
-      </section>
+
+      <FeaturesBox />
     </>
   );
 };

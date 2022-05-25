@@ -9,57 +9,57 @@ import { Link } from "react-router-dom";
 
 const Categories = () => {
   return (
-    <div className={`${styles.categories} ut-width`}>
-      {/* Card 1 */}
-      <div className={styles.category_card}>
-        <div className={styles.img_box}>
-          <img
-            className={styles.category_img}
-            src={headphones}
-            alt="headphone"
-          />
-        </div>
-        <p className={styles.category_name}>Headphones</p>
-        <Link className={styles.category_link} to="/headphones">
-          shop{" "}
-          <spam>
+    <section className={`${styles.section_category} ut-align-center`}>
+      <div className={`${styles.categories} ut-width`}>
+        {/* Card 1 */}
+        <div className={styles.category_card}>
+          <div className={styles.img_box}>
+            <img
+              className={styles.category_img}
+              src={headphones}
+              alt="headphone"
+            />
+          </div>
+          <p className={styles.category_name}>Headphones</p>
+          <Link className={styles.category_link} to="/headphones">
+            shop
             <img className={styles.icon_arrow} src={arrowR} alt="arrow icon" />
-          </spam>
-        </Link>
-      </div>
+          </Link>
+        </div>
 
-      {/* Card 2 */}
-      <div className={styles.category_card}>
-        <div className={styles.img_box}>
-          <img className={styles.category_img} src={speakers} alt="headphone" />
-        </div>
-        <p className={styles.category_name}>Speakers</p>
-        <Link className={styles.category_link} to="/speakers">
-          shop{" "}
-          <spam>
+        {/* Card 2 */}
+        <div className={styles.category_card}>
+          <div className={styles.img_box}>
+            <img
+              className={styles.category_img}
+              src={speakers}
+              alt="headphone"
+            />
+          </div>
+          <p className={styles.category_name}>Speakers</p>
+          <Link className={styles.category_link} to="/speakers">
+            shop{" "}
             <img className={styles.icon_arrow} src={arrowR} alt="arrow icon" />
-          </spam>
-        </Link>
-      </div>
+          </Link>
+        </div>
 
-      {/* Card 3 */}
-      <div className={styles.category_card}>
-        <div className={styles.img_box}>
-          <img
-            className={styles.category_img}
-            src={earphones}
-            alt="headphone"
-          />
-        </div>
-        <p className={styles.category_name}>Earphones</p>
-        <Link className={styles.category_link} to="/earphones">
-          shop{" "}
-          <spam>
+        {/* Card 3 */}
+        <div className={styles.category_card}>
+          <div className={styles.img_box}>
+            <img
+              className={styles.category_img}
+              src={earphones}
+              alt="headphone"
+            />
+          </div>
+          <p className={styles.category_name}>Earphones</p>
+          <Link className={styles.category_link} to="/earphones">
+            shop
             <img className={styles.icon_arrow} src={arrowR} alt="arrow icon" />
-          </spam>
-        </Link>
+          </Link>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
