@@ -106,3 +106,27 @@ li {
     }
   }
 }
+
+// products grid
+.products_grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.product-container {
+  display: flex;
+  align-items: center;
+  gap: 15rem;
+
+  &--1 {
+    justify-content: flex-end;
+  }
+
+  &--2 {
+    flex-direction: row-reverse;
+  }
+
+  &--3 {
+  }
+}

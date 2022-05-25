@@ -1,0 +1,38 @@
+.img_box {
+  flex-basis: 50%;
+}
+
+.img {
+  width: 100%;
+  display: block;
+}
+
+.description_box {
+  flex: 1;
+}
+
+.new {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+  color: var(--color-primary);
+  margin-bottom: 1.4rem;
+}
+
+.product_name {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--color-black);
+  line-height: 1.1;
+  letter-spacing: 1.5px;
+  margin-bottom: 2.4rem;
+  max-width: 10ch;
+}
+
+.description {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  max-width: 45ch;
+
+  margin-bottom: 3.2rem;
+}
