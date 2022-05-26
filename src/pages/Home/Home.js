@@ -18,7 +18,10 @@ const Home = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <ProductButton class="orange" path="/" />
+            <ProductButton
+              class="orange"
+              path="/headphones/xx99-mark-two-headphones"
+            />
           </div>
         </div>
       </section>
@@ -43,7 +46,7 @@ const Home = () => {
                 Upgrade to premium speakers that are phenomenally built to
                 deliver truly remarkable sound.
               </p>
-              <ProductButton class="black" path="/speakers" />
+              <ProductButton class="black" path="/speakers/zx9-speaker" />
             </div>
           </div>
           <div className={styles.products_2}>
@@ -56,7 +59,7 @@ const Home = () => {
             </div>
             <div className={styles.products_2__text_box}>
               <p className={styles.products_2__heading}>ZX7 SPEAKER</p>
-              <ProductButton class="white" path="/speakers" />
+              <ProductButton class="white" path="/speakers/zx7-speaker" />
             </div>
           </div>
           <div className={styles.products_3}>
@@ -69,7 +72,7 @@ const Home = () => {
           <div className={styles.products_4}>
             <div className={styles.products_4__text_box}>
               <p className={styles.products_4__heading}>YX1 EARPHONES</p>
-              <ProductButton class="white" path="/earphones" />
+              <ProductButton class="white" path="/earphones/yx1-earphones" />
             </div>
           </div>
         </div>

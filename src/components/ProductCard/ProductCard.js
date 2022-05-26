@@ -18,7 +18,10 @@ const ProductCard = (props) => {
         {props.data.new ? <p className={styles.new}>new product</p> : null}
         <h3 className={styles.product_name}>{props.data.name}</h3>
         <p className={styles.description}>{props.data.description}</p>
-        <ProductButton class="orange" path="/" />
+        <ProductButton
+          class="orange"
+          path={`/${props.data.category}/${props.data.slug}`}
+        />
       </div>
     </>
   );

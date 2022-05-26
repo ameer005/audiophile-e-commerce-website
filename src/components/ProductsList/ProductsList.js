@@ -4,8 +4,6 @@ import styles from "./ProductsList.module.scss";
 import ProductCard from "../ProductCard/ProductCard";
 
 const ProductsList = (props) => {
-  console.log(props.data);
-
   const renderProductsList = () => {
     return props.data.map((product, index) => {
       return (

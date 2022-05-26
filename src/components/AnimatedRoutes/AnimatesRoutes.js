@@ -15,7 +15,9 @@ const AnimatesRoutes = () => {
       <Route path="/headphones" element={<Headphones />} />
       <Route path="/speakers" element={<Speakers />} />
       <Route path="/earphones" element={<Earphones />} />
-      <Route path="/product" element={<Product />} />
+      <Route path="/headphones/:product" element={<Product />} />
+      <Route path="/speakers/:product" element={<Product />} />
+      <Route path="/earphones/:product" element={<Product />} />
       <Route path="/checkout" element={<Checkout />} />
     </Routes>
   );
