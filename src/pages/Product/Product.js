@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import Categories from "../../components/Categories/Categories";
 import FeaturesBox from "../../components/FeaturesBox/FeaturesBox";
 import Quantity from "../../components/Quantity/Quantity";
+import ProductButton from "../../components/ProductButton/ProductButton";
 
 const Product = () => {
   const data = useSelector((state) => state.products);
@@ -16,11 +17,38 @@ const Product = () => {
   const [productData] = data.products.filter((item) => item.slug == product);
 
   const renderAccessories = () => {
-    return productData.includes.map((acc) => {
+    return productData.includes.map((acc, index) => {
       return (
-        <div className={styles.acc_container}>
+        <div key={index} className={styles.acc_container}>
           <div className={styles.acc_quantity}>{`${acc.quantity}x`}</div>
           <div className={styles.acc_item}>{acc.item}</div>
+        </div>
+      );
+    });
+  };
+
+  const renderSuggestedItems = () => {
+    return productData.others.map((item) => {
+      const [category] = data.products.filter(
+        (product) => product.slug == item.slug
+      );
+
+      return (
+        <div className={styles.suggested_card}>
+          <div className={styles.suggested_img_box}>
+            <img
+              className={styles.suggested_img}
+              src={item.image.desktop}
+              alt={item.name}
+            />
+          </div>
+          <div className={styles.suggested_text_box}>
+            <p className={styles.suggested_product_name}>{item.name}</p>
+            <ProductButton
+              class="orange"
+              path={`/${category.category}/${item.slug}`}
+            />
+          </div>
         </div>
       );
     });
@@ -62,6 +90,37 @@ const Product = () => {
             <div className={styles.feature_acc_box}>
               <h2 className={styles.feature_heading}>in the box</h2>
               {renderAccessories()}
+            </div>
+          </div>
+
+          <div className={styles.gallery}>
+            <div className={styles.gallery_img_box_1}>
+              <img
+                className={styles.gallery_img}
+                src={productData.gallery.first.desktop}
+                alt="gallery img 1"
+              />
+            </div>
+            <div className={styles.gallery_img_box_2}>
+              <img
+                className={styles.gallery_img}
+                src={productData.gallery.second.desktop}
+                alt="gallery img 1"
+              />
+            </div>
+            <div className={styles.gallery_img_box_3}>
+              <img
+                className={styles.gallery_img}
+                src={productData.gallery.third.desktop}
+                alt="gallery img 1"
+              />
+            </div>
+          </div>
+
+          <div className={styles.suggestions}>
+            <h2 className={styles.suggestions__heading}>you may also like</h2>
+            <div className={styles.suggested_items}>
+              {renderSuggestedItems()}
             </div>
           </div>
         </div>
