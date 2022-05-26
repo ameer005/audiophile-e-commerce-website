@@ -32,7 +32,11 @@ const Product = () => {
       <div className={`${styles.product_details} ut-width`}>
         <div className={styles.top}>
           <div className={styles.img_box}>
-            <img src={productData.image.desktop} alt={productData.name} />
+            <img
+              className={styles.img}
+              src={productData.image.desktop}
+              alt={productData.name}
+            />
           </div>
 
           <div className={styles.text_box}>

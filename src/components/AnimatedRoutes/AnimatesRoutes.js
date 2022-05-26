@@ -12,13 +12,13 @@ const AnimatesRoutes = () => {
   return (
     <Routes location={location} key={location.pathname}>
       <Route path="/" exact element={<Home />} />
-      <Route path="/headphones" element={<Headphones />} />
-      <Route path="/speakers" element={<Speakers />} />
-      <Route path="/earphones" element={<Earphones />} />
-      <Route path="/headphones/:product" element={<Product />} />
-      <Route path="/speakers/:product" element={<Product />} />
-      <Route path="/earphones/:product" element={<Product />} />
-      <Route path="/checkout" element={<Checkout />} />
+      <Route exact path="/headphones" element={<Headphones />} />
+      <Route exact path="/speakers" element={<Speakers />} />
+      <Route exact path="/earphones" element={<Earphones />} />
+      <Route exact path="/headphones/:product" element={<Product />} />
+      <Route exact path="/speakers/:product" element={<Product />} />
+      <Route exact path="/earphones/:product" element={<Product />} />
+      <Route exact path="/checkout" element={<Checkout />} />
     </Routes>
   );
 };
