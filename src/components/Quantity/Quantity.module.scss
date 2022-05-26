@@ -1,0 +1,30 @@
+.container {
+  background-color: var(--color-grey-1);
+
+  display: flex;
+  // gap: 0.8rem;
+  align-items: center;
+}
+
+.btn_quantity {
+  display: block;
+  background: none;
+  border: none;
+  background-color: var(--color-grey-1);
+
+  padding: 1.6rem 2rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.134);
+  }
+}
+
+.number {
+  color: var(--color-black);
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0.8rem;
+}

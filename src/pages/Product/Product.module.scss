@@ -5,6 +5,7 @@
   margin-top: 8rem;
 }
 
+// TOP
 .top {
   display: grid;
   grid-template-columns: 50% 1fr;
@@ -22,9 +23,9 @@
 }
 
 .new {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
-  letter-spacing: 0.6rem;
+  letter-spacing: 0.8rem;
   color: var(--color-primary);
   margin-bottom: 1.4rem;
 }
@@ -40,15 +41,71 @@
 }
 
 .description {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 1.6;
-  max-width: 45ch;
 
   margin-bottom: 2.4rem;
 }
 
 .price {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--color-black);
   font-weight: 700;
+
+  margin-bottom: 3.2rem;
+}
+
+.quantity_group {
+  display: flex;
+  gap: 1.8rem;
+}
+
+// BOTTOM
+.bottom {
+}
+
+.features {
+  margin-top: 20rem;
+  display: flex;
+  gap: 8rem;
+}
+
+.feature_text_box {
+  flex-basis: 60%;
+}
+
+.feature_heading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-black);
+
+  margin-bottom: 2.4rem;
+}
+
+.feature_text {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  max-width: 71ch;
+  white-space: pre-line;
+}
+
+.feature_acc_box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.acc_container {
+  display: flex;
+  font-size: 1.6rem;
+  gap: 1.4rem;
+}
+
+.acc_quantity {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.acc_item {
 }
