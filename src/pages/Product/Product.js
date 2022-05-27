@@ -1,20 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Product.module.scss";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import Categories from "../../components/Categories/Categories";
 import FeaturesBox from "../../components/FeaturesBox/FeaturesBox";
 import Quantity from "../../components/Quantity/Quantity";
 import ProductButton from "../../components/ProductButton/ProductButton";
+import { addToCart } from "../../features/product/productSlice";
 
 const Product = () => {
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+
   const data = useSelector((state) => state.products);
   const { product } = useParams();
 
   if (data.status !== "success") return;
 
   const [productData] = data.products.filter((item) => item.slug == product);
+
+  const cart = () => {
+    dispatch(addToCart({ ...productData, quantity: quantity }));
+  };
 
   const renderAccessories = () => {
     return productData.includes.map((acc, index) => {
@@ -28,13 +37,13 @@ const Product = () => {
   };
 
   const renderSuggestedItems = () => {
-    return productData.others.map((item) => {
+    return productData.others.map((item, index) => {
       const [category] = data.products.filter(
         (product) => product.slug == item.slug
       );
 
       return (
-        <div className={styles.suggested_card}>
+        <div key={index} className={styles.suggested_card}>
           <div className={styles.suggested_img_box}>
             <img
               className={styles.suggested_img}
@@ -54,7 +63,6 @@ const Product = () => {
     });
   };
 
-  console.log(productData);
   return (
     <div className={`${styles.product_container} ut-align-center`}>
       <div className={`${styles.product_details} ut-width`}>
@@ -72,9 +80,13 @@ const Product = () => {
             <h3 className={styles.product_name}>{productData.name}</h3>
             <p className={styles.description}>{productData.description}</p>
             <p className={styles.price}>{`$ ${productData.price}`}</p>
+
             <div className={styles.quantity_group}>
-              <Quantity />
-              <button className="product-btn product-btn--orange">
+              <Quantity quantity={quantity} setQuantity={setQuantity} />
+              <button
+                onClick={cart}
+                className="product-btn product-btn--orange"
+              >
                 add to cart
               </button>
             </div>

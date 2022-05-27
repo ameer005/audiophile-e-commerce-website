@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import styles from "./Header.module.scss";
 import logo from "../../assets/icons/logo.svg";
@@ -8,6 +9,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [pathname, setPathName] = useState(window.location.pathname);
+  const cartItems = useSelector((state) => state.products.cart);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -63,7 +65,9 @@ const Header = () => {
 
         <div className={styles.cart_group}>
           <img className={styles.icon__cart} src={cart} alt="" />
-          <span className={styles.cart_quantity}>1</span>
+          {cartItems.length ? (
+            <span className={styles.cart_quantity}>{cartItems.length}</span>
+          ) : null}
         </div>
       </nav>
     </header>
