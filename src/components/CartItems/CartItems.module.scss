@@ -1,0 +1,35 @@
+.cart_items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.item_img_box {
+  // width: 6.4rem;
+}
+
+.item_img {
+  width: 6.4rem;
+  display: block;
+}
+
+.item_details_box {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.item_name {
+  color: var(--color-black);
+  line-height: 1.2;
+
+  margin-bottom: 0.6rem;
+}
+
+.item_price {
+}

@@ -2,7 +2,6 @@
   background-color: var(--color-grey-1);
 
   display: flex;
-  // gap: 0.8rem;
   align-items: center;
 }
 
@@ -23,8 +22,22 @@
 }
 
 .number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   color: var(--color-black);
   font-size: 1.4rem;
   font-weight: 700;
-  padding: 0.8rem;
+  width: 2.8rem;
+}
+
+.small {
+  .btn_quantity {
+    padding: 1rem 1.4rem;
+  }
+
+  .number {
+    width: 3.2rem;
+  }
 }

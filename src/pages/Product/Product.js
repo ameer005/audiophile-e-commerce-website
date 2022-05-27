@@ -9,6 +9,7 @@ import FeaturesBox from "../../components/FeaturesBox/FeaturesBox";
 import Quantity from "../../components/Quantity/Quantity";
 import ProductButton from "../../components/ProductButton/ProductButton";
 import { addToCart } from "../../features/product/productSlice";
+import currencyFormatter from "../../utils/currencyFormatter";
 
 const Product = () => {
   const [quantity, setQuantity] = useState(1);
@@ -79,10 +80,17 @@ const Product = () => {
             {productData.new ? <p className={styles.new}>new product</p> : null}
             <h3 className={styles.product_name}>{productData.name}</h3>
             <p className={styles.description}>{productData.description}</p>
-            <p className={styles.price}>{`$ ${productData.price}`}</p>
+            <p className={styles.price}>{`${currencyFormatter.format(
+              productData.price
+            )}`}</p>
 
             <div className={styles.quantity_group}>
-              <Quantity quantity={quantity} setQuantity={setQuantity} />
+              <Quantity
+                cartItem={null}
+                className="big"
+                quantity={quantity}
+                setQuantity={setQuantity}
+              />
               <button
                 onClick={cart}
                 className="product-btn product-btn--orange"

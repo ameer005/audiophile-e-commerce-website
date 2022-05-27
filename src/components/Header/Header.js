@@ -5,10 +5,12 @@ import { useSelector } from "react-redux";
 import styles from "./Header.module.scss";
 import logo from "../../assets/icons/logo.svg";
 import cart from "../../assets/icons/icon-cart.svg";
+import ModalCart from "../ModalCart/ModalCart";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [pathname, setPathName] = useState(window.location.pathname);
+  const [showCart, setShowCart] = useState(false);
   const cartItems = useSelector((state) => state.products.cart);
   const navigate = useNavigate();
 
@@ -63,12 +65,13 @@ const Header = () => {
           </li>
         </ul>
 
-        <div className={styles.cart_group}>
+        <div onClick={() => setShowCart(true)} className={styles.cart_group}>
           <img className={styles.icon__cart} src={cart} alt="" />
           {cartItems.length ? (
             <span className={styles.cart_quantity}>{cartItems.length}</span>
           ) : null}
         </div>
+        {showCart ? <ModalCart setShowCart={setShowCart} /> : null}
       </nav>
     </header>
   );
