@@ -106,12 +106,14 @@
   border: 1px solid var(--color-input-border);
   border-radius: 0.7rem;
   outline: none;
-  transition: all 0.3s;
+  transition: all 0.2s;
   color: var(--color-secondary);
 
   &:hover,
   &:focus {
-    border: 1px solid var(--color-primary);
+    // border: 1px solid var(--color-primary);
+    border-color: rgb(216, 125, 74);
+    box-shadow: rgb(216 125 74) 0px 0px 0px 1px;
   }
 
   &::placeholder {
@@ -136,11 +138,12 @@
   padding: 1.9rem 5.2rem;
   border-radius: 0.7rem;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s;
 
   &:hover,
   &:focus {
-    border: 1px solid var(--color-primary);
+    border-color: rgb(216, 125, 74);
+    box-shadow: rgb(216 125 74) 0px 0px 0px 1px;
   }
 }
 
@@ -187,4 +190,10 @@
 
 .cod_img {
   width: 5.2rem;
+}
+
+.error {
+  .label {
+    color: var(--color-error);
+  }
 }

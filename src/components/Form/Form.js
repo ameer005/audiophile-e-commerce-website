@@ -1,12 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Form.module.scss";
 import codIcon from "../../assets/icons/icon-cod.svg";
+import { useForm } from "react-hook-form";
+import { schema } from "../../utils/yupSchema";
+import { yupResolver } from "@hookform/resolvers/yup";
 
-const Form = () => {
-  const [cod, setCod] = useState(false);
+const Form = (props) => {
+  const {
+    register,
+    handleSubmit,
+    unregister,
+    watch,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const payment = watch("payment");
+
+  useEffect(() => {
+    if (payment === "cod") {
+      unregister(["eMoneyNumber", "eMoneyPin"]);
+    }
+  }, [unregister, payment]);
 
   const renderPaymentMethod = () => {
-    if (cod) {
+    if (payment === "cod") {
       return (
         <div
           className={`${styles.input_container} ${styles.input_container__3_2}`}
@@ -24,31 +43,39 @@ const Form = () => {
     return (
       <>
         <label
-          className={`${styles.input_container} ${styles.input_container__3_3}`}
+          className={`${styles.input_container} ${
+            styles.input_container__3_3
+          } ${errors.eMoneyNumber && styles.error}`}
         >
           <div className={styles.top}>
             <span className={styles.label}>e-Money Number</span>
-            <span className={styles.error}>This field cannot be empty</span>
+            <span className={styles.error}>
+              {errors.eMoneyNumber && "Field cannot be empty"}
+            </span>
           </div>
           <input
-            name="e-money-number"
+            {...register("eMoneyNumber")}
             className={styles.input}
-            type="text"
+            type="Number"
             placeholder="23852199"
           />
         </label>
 
         <label
-          className={`${styles.input_container} ${styles.input_container__3_4}`}
+          className={`${styles.input_container} ${
+            styles.input_container__3_4
+          } ${errors.eMoneyPin && styles.error}`}
         >
           <div className={styles.top}>
             <span className={styles.label}>e-Money PIN</span>
-            <span className={styles.error}>This field cannot be empty</span>
+            <span className={styles.error}>
+              {errors.eMoneyPin && "Field cannot be empty"}
+            </span>
           </div>
           <input
-            name="e-money-pin"
+            {...register("eMoneyPin")}
             className={styles.input}
-            type="text"
+            type="Number"
             placeholder="3328"
           />
         </label>
@@ -57,7 +84,7 @@ const Form = () => {
   };
 
   return (
-    <form className={styles.form}>
+    <form onSubmit={handleSubmit(props.onSubmit)} className={styles.form}>
       <h2 className={styles.form_heading}>checkout</h2>
 
       {/* BILLING DETAILS */}
@@ -66,44 +93,52 @@ const Form = () => {
 
         <div className={styles.input_data}>
           <label
-            className={`${styles.input_container} ${styles.input_container__1_1}`}
+            className={`${styles.input_container} ${
+              styles.input_container__1_1
+            } ${errors.name && styles.error}`}
           >
             <div className={styles.top}>
               <span className={styles.label}>Name</span>
-              <span className={styles.error}>This field cannot be empty</span>
+              <span className={styles.error}>{errors.name?.message}</span>
             </div>
             <input
-              name="name"
+              {...register("name")}
               className={styles.input}
               type="text"
               placeholder="Ameer Khan"
             />
           </label>
           <label
-            className={`${styles.input_container} ${styles.input_container__1_2}`}
+            className={`${styles.input_container} ${
+              styles.input_container__1_2
+            } ${errors.email && styles.error}`}
           >
             <div className={styles.top}>
               <span className={styles.label}>Email Address</span>
-              <span className={styles.error}>This field cannot be empty</span>
+              <span className={styles.error}>{errors.email?.message}</span>
             </div>
             <input
-              name="email"
+              {...register("email")}
               className={styles.input}
               type="email"
               placeholder="ameerkhan@gmail.com"
             />
           </label>
           <label
-            className={`${styles.input_container} ${styles.input_container__1_3}`}
+            className={`${styles.input_container} ${
+              styles.input_container__1_3
+            } ${errors.phoneNumber && styles.error}`}
           >
             <div className={styles.top}>
               <span className={styles.label}>Phone Number</span>
-              <span className={styles.error}>This field cannot be empty</span>
+              <span className={styles.error}>
+                {errors.phoneNumber && "Field cannot be empty"}
+              </span>
             </div>
             <input
-              name="phone"
+              {...register("phoneNumber")}
               className={styles.input}
-              type="text"
+              type="number"
               placeholder="+1 202-555-0136"
             />
           </label>
@@ -116,56 +151,68 @@ const Form = () => {
 
         <div className={styles.input_data}>
           <label
-            className={`${styles.input_container} ${styles.input_container__2_1}`}
+            className={`${styles.input_container} ${
+              styles.input_container__2_1
+            } ${errors.address && styles.error}`}
           >
             <div className={styles.top}>
               <span className={styles.label}>Your Address</span>
-              <span className={styles.error}>This field cannot be empty</span>
+              <span className={styles.error}>{errors.address?.message}</span>
             </div>
             <input
-              name="address"
+              {...register("address")}
               className={styles.input}
               type="text"
               placeholder="1147 Park Avenue"
             />
           </label>
           <label
-            className={`${styles.input_container} ${styles.input_container__2_2}`}
+            className={`${styles.input_container} ${
+              styles.input_container__2_2
+            } ${errors.zipCode && styles.error}`}
           >
             <div className={styles.top}>
               <span className={styles.label}>Zip Code</span>
-              <span className={styles.error}>This field cannot be empty</span>
+              <span className={styles.error}>
+                {errors.zipCode && "Field cannot be empty"}
+              </span>
             </div>
             <input
-              name="zip"
+              {...register("zipCode")}
               className={styles.input}
-              type="text"
+              type="number"
               placeholder="248001"
             />
           </label>
           <label
-            className={`${styles.input_container} ${styles.input_container__2_3}`}
+            className={`${styles.input_container} ${
+              styles.input_container__2_3
+            } ${errors.cityName && styles.error}`}
           >
             <div className={styles.top}>
               <span className={styles.label}>City</span>
-              <span className={styles.error}>This field cannot be empty</span>
+              <span className={styles.error}>{errors.cityName?.message}</span>
             </div>
             <input
-              name="city"
+              {...register("cityName")}
               className={styles.input}
               type="text"
               placeholder="Dehradun"
             />
           </label>
           <label
-            className={`${styles.input_container} ${styles.input_container__2_4}`}
+            className={`${styles.input_container} ${
+              styles.input_container__2_4
+            } ${errors.countryName && styles.error}`}
           >
             <div className={styles.top}>
               <span className={styles.label}>Country</span>
-              <span className={styles.error}>This field cannot be empty</span>
+              <span className={styles.error}>
+                {errors.countryName?.message}
+              </span>
             </div>
             <input
-              name="country"
+              {...register("countryName")}
               className={styles.input}
               type="text"
               placeholder="India"
@@ -183,28 +230,24 @@ const Form = () => {
           <div
             className={`${styles.input_container} ${styles.input_container__3_1}`}
           >
-            <label
-              onClick={() => setCod(false)}
-              className={`${styles.radio_label} `}
-            >
+            <label className={`${styles.radio_label} `}>
               <input
-                name="payment"
+                {...register("payment")}
                 className={styles.radio_input}
                 type="radio"
-                checked
+                value="ePay"
+                defaultChecked
               />
               <button className={styles.radio_btn}></button>
               e-Money
             </label>
 
-            <label
-              onClick={() => setCod(true)}
-              className={`${styles.radio_label}`}
-            >
+            <label className={`${styles.radio_label}`}>
               <input
-                name="payment"
+                {...register("payment")}
                 className={styles.radio_input}
                 type="radio"
+                value="cod"
               />
               <button className={styles.radio_btn}></button>
               Cash On Delivery
