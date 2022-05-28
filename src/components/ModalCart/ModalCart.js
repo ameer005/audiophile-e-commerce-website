@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import CartItems from "../CartItems/CartItems";
 import { removeAllItems } from "../../features/product/productSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 import styles from "./ModalCart.module.scss";
 import currencyFormatter from "../../utils/currencyFormatter";
@@ -56,11 +57,12 @@ const ModalCart = (props) => {
               {currencyFormatter.format(calculateTotalPrice())}
             </p>
           </div>
-          <button
+          <Link
+            to="/checkout"
             className={`${styles.checkout_btn} product-btn product-btn--orange`}
           >
             Checkout
-          </button>
+          </Link>
         </div>
 
         <svg

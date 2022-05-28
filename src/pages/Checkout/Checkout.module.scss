@@ -1,0 +1,20 @@
+.checkout_container {
+  margin-top: 12rem;
+}
+
+.checkout {
+  display: grid;
+  grid-template-columns: 65% 1fr;
+
+  gap: 2.8rem;
+}
+
+.checkout_form {
+  background-color: white;
+  padding: 4.8rem 3.2rem;
+  border-radius: 0.5rem;
+}
+
+.checkout_summary {
+  background-color: white;
+}
