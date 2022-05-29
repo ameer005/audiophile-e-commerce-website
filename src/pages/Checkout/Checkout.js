@@ -13,6 +13,7 @@ const Checkout = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    setShowModal(true);
   };
 
   const calculateTotalPrice = () => {
@@ -68,7 +69,8 @@ const Checkout = () => {
             </p>
           </div>
           <button
-            onClick={() => setShowModal(true)}
+            type="submit"
+            form="my-form"
             className={`${styles.checkout_btn} product-btn product-btn--orange`}
           >
             Checkout

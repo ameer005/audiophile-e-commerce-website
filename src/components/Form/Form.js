@@ -84,7 +84,11 @@ const Form = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(props.onSubmit)} className={styles.form}>
+    <form
+      id="my-form"
+      onSubmit={handleSubmit(props.onSubmit)}
+      className={styles.form}
+    >
       <h2 className={styles.form_heading}>checkout</h2>
 
       {/* BILLING DETAILS */}
