@@ -16,5 +16,51 @@
 }
 
 .checkout_summary {
+  padding: 4.8rem 3.2rem;
+
   background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.summary_heading {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-black);
+}
+
+.cart_items_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.price_calculation_box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.price_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.amount {
+  font-size: 1.6rem;
+  color: var(--color-black);
+  font-weight: 700;
+
+  &__grand {
+    color: var(--color-primary);
+  }
 }

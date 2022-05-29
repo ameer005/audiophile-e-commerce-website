@@ -46,6 +46,9 @@ const productSlice = createSlice({
         if (item.id === payload) item.quantity -= 1;
       });
     },
+    emptyCart: (state) => {
+      state.cart = [];
+    },
   },
   extraReducers: {
     [fetchProducts.pending]: (state) => {
@@ -66,5 +69,6 @@ export const {
   removeAllItems,
   increaseItemQuantity,
   decreaseItemQuantity,
+  emptyCart,
 } = productSlice.actions;
 export default productSlice.reducer;

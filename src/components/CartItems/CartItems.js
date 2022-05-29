@@ -23,12 +23,16 @@ const CartItems = (props) => {
           </div>
         </div>
       </div>
-      <Quantity
-        cartItem={props.data}
-        className="small"
-        quantity={quantity}
-        setQuantity={setQuantity}
-      />
+      {props.class ? (
+        <div className={styles.quantity_no}>{`x${props.data.quantity}`}</div>
+      ) : (
+        <Quantity
+          cartItem={props.data}
+          className="small"
+          quantity={quantity}
+          setQuantity={setQuantity}
+        />
+      )}
     </div>
   );
 };

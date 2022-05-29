@@ -5,6 +5,7 @@
 }
 
 .product {
+  flex-basis: 50%;
   display: flex;
   align-items: center;
   gap: 1.4rem;
@@ -15,13 +16,14 @@
 }
 
 .item_img {
-  width: 6.4rem;
+  width: 7rem;
   display: block;
+  border-radius: 0.6rem;
 }
 
 .item_details_box {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .item_name {
@@ -32,4 +34,9 @@
 }
 
 .item_price {
+}
+
+.quantity_no {
+  font-size: 1.6rem;
+  font-weight: 700;
 }

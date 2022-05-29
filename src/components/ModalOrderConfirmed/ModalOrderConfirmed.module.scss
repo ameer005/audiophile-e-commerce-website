@@ -1,0 +1,124 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: relative;
+  flex: 1;
+  max-width: 50rem;
+  min-height: 20rem;
+  padding: 3.2rem;
+
+  background-color: white;
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.icon_check {
+  width: 6.4rem;
+  margin-bottom: 1.8rem;
+}
+
+.thanks_text {
+  color: var(--color-black);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3rem;
+  max-width: 15ch;
+  line-height: 1.1;
+
+  margin-bottom: 2.4rem;
+}
+
+.confirm_text {
+  font-size: 1.5rem;
+  margin-bottom: 3.2rem;
+}
+
+.item_container {
+  display: flex;
+
+  border-radius: 0.5rem;
+
+  overflow: hidden;
+
+  margin-bottom: 3.2rem;
+}
+
+.item_box {
+  flex-basis: 55%;
+  padding: 3.2rem 1.2rem;
+  background-color: var(--color-grey-1);
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+.more_items {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.item_img {
+  width: 6.4rem;
+}
+
+.item_name {
+  color: var(--color-black);
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  max-width: 15ch;
+}
+
+.item_price {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.item_quantity {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.total_box {
+  padding: 3.2rem;
+  flex: 1;
+  background-color: var(--color-secondary);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grand_total {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  color: var(--color-text-light);
+  margin-bottom: 1.6rem;
+}
+
+.grand_total_amount {
+  color: var(--color-grey-1);
+  font-weight: 700;
+  font-size: 1.3rem;
+}

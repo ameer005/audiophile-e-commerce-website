@@ -16,7 +16,7 @@
 .modal {
   position: relative;
   flex: 1;
-  max-width: 35rem;
+  max-width: 38rem;
   min-height: 20rem;
   padding: 3.2rem;
   margin: 10rem 20rem;
@@ -80,7 +80,7 @@
 .bottom {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 2.8rem;
 }
 
 .total_box {
@@ -102,7 +102,7 @@
 }
 
 .checkout_btn {
-  padding: 1.2rem 3.2rem;
+  // padding: 1.4rem 3.2rem;
   display: flex;
   justify-content: center;
 }

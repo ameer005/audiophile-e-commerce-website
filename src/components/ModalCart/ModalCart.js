@@ -26,13 +26,9 @@ const ModalCart = (props) => {
 
   const calculateTotalPrice = () => {
     let total = 0;
-
     cartItems.forEach((item) => {
-      // console.log(item.price, item.quantity);
       total += item.price * item.quantity;
-      console.log(total);
     });
-
     return total;
   };
 
@@ -58,6 +54,7 @@ const ModalCart = (props) => {
             </p>
           </div>
           <Link
+            onClick={() => props.setShowCart(false)}
             to="/checkout"
             className={`${styles.checkout_btn} product-btn product-btn--orange`}
           >
