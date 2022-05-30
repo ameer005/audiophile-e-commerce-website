@@ -28,6 +28,7 @@
   left: 0px;
   z-index: 1;
   transform: scale(1.2);
+  animation: fadeIn 4s;
 
   @include respond(tab-land) {
     background-image: url("../../assets/images/home/tablet/image-header.jpg");
@@ -35,6 +36,16 @@
 
   @include respond(phone) {
     background-image: url("../../assets/images/home/mobile/image-header.jpg");
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 

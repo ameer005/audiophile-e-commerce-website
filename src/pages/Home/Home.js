@@ -12,9 +12,9 @@ const Home = () => {
     <div>
       {/* HERO SECTION */}
       <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: "2" }}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ duration: "2" }}
         className={`${styles.section_hero} ut-align-center`}
       >
         <div className={`${styles.content_box} ut-width`}>
@@ -22,7 +22,7 @@ const Home = () => {
             className={styles.box}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: "1.5", duration: "1.8" }}
+            transition={{ delay: "1", duration: "2" }}
           >
             <h3 className={styles.sub_heading}>new product</h3>
             <h1 className={styles.primary_heading}>XX99 MARK II HEADPHONES</h1>
