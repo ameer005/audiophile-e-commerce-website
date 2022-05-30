@@ -9,20 +9,20 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: "2" }}
-    >
+    <div>
       {/* HERO SECTION */}
-      <section className={`${styles.section_hero} ut-align-center`}>
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: "2" }}
+        className={`${styles.section_hero} ut-align-center`}
+      >
         <div className={`${styles.content_box} ut-width`}>
-          <div className={styles.hero_img}></div>
           <motion.div
             className={styles.box}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: "1.6", duration: "1.3" }}
+            transition={{ delay: "1.5", duration: "1.8" }}
           >
             <h3 className={styles.sub_heading}>new product</h3>
             <h1 className={styles.primary_heading}>XX99 MARK II HEADPHONES</h1>
@@ -36,7 +36,7 @@ const Home = () => {
             />
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* PRODUCTS CATEGORIES */}
       <Categories />
@@ -128,7 +128,7 @@ const Home = () => {
       {/* FEATUREs SECTION */}
 
       <FeaturesBox />
-    </motion.div>
+    </div>
   );
 };
 

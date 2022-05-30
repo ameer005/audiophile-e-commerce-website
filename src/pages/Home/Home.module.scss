@@ -61,6 +61,10 @@
   font-weight: 700;
 
   margin-bottom: 1.8rem;
+
+  @include respond(tab-land) {
+    letter-spacing: 1rem;
+  }
 }
 
 .primary_heading {

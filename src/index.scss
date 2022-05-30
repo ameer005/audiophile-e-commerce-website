@@ -37,6 +37,8 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 
+  overflow-x: hidden;
+
   @include respond(tab-land) {
     font-size: 56.25%;
   }
@@ -48,6 +50,7 @@ body {
   font-weight: 400;
   color: var(--color-text);
   background-color: var(--color-grey-2);
+  position: relative;
 }
 
 a {
