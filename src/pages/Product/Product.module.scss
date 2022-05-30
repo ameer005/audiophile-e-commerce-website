@@ -4,10 +4,10 @@
 }
 
 .product_details {
-  margin-top: 12rem;
+  margin-top: 6.4rem;
 
-  @include respond(phone) {
-    margin-top: 6.4rem;
+  @include respond(tab-land) {
+    margin-top: 3.2rem;
   }
 }
 

@@ -1,0 +1,15 @@
+@import "../../common/mixins.scss";
+
+.history {
+  margin-top: 8rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  @include respond(tab-land) {
+    margin-top: 3.2rem;
+  }
+  &:hover {
+    color: var(--color-black);
+  }
+}

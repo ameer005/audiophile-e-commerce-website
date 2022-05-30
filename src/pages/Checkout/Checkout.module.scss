@@ -1,11 +1,6 @@
 @import "../../common/mixins.scss";
 
 .checkout_container {
-  margin-top: 12rem;
-
-  @include respond(tab-land) {
-    margin-top: 0rem;
-  }
 }
 
 .checkout {
@@ -13,9 +8,11 @@
   grid-template-columns: 65% 1fr;
 
   gap: 2.8rem;
+  margin-top: 6.4rem;
 
   @include respond(tab-land) {
     grid-template-columns: 1fr;
+    margin-top: 3.2rem;
   }
 }
 
