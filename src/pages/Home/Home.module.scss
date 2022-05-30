@@ -6,20 +6,31 @@
 
 .content_box {
   // height: calc(100vh - 9rem);
-  height: 63.5rem;
-  background-image: url("../../assets/images/home/desktop/image-hero.jpg");
-  background-size: 125%;
-
-  background-position: center 110%;
-  background-repeat: no-repeat;
+  // height: 63.5rem;
+  padding: 14.5rem 0;
   display: flex;
   align-items: center;
+  position: relative;
+
+  @include respond(tab-land) {
+    justify-content: center;
+  }
+}
+
+.content_box::after {
+  content: "";
+  position: absolute;
+  background: url(../../assets/images/home/desktop/image-hero.jpg)
+    center/contain no-repeat;
+  width: 100%;
+  height: 100%;
+  top: -6rem;
+  left: 0px;
+  z-index: 1;
+  transform: scale(1.2);
 
   @include respond(tab-land) {
     background-image: url("../../assets/images/home/tablet/image-header.jpg");
-    background-size: cover;
-    background-position: center;
-    justify-content: center;
   }
 
   @include respond(phone) {
@@ -28,6 +39,8 @@
 }
 
 .box {
+  position: relative;
+  z-index: 2;
   color: var(--color-text-light);
 
   @include respond(tab-land) {

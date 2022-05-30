@@ -17,6 +17,7 @@ const Home = () => {
       {/* HERO SECTION */}
       <section className={`${styles.section_hero} ut-align-center`}>
         <div className={`${styles.content_box} ut-width`}>
+          <div className={styles.hero_img}></div>
           <motion.div
             className={styles.box}
             initial={{ opacity: 0 }}

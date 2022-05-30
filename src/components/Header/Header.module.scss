@@ -3,6 +3,7 @@
 .header {
   background-color: var(--color-secondary);
   position: relative;
+  z-index: 10;
 }
 
 .nav {
