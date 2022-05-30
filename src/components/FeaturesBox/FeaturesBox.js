@@ -19,11 +19,21 @@ const FeaturesBox = () => {
           </p>
         </div>
         <div className={styles.img_box}>
-          <img
-            className={styles.img}
-            src={require("../../assets/images/shared/desktop/image-best-gear.jpg")}
-            alt=""
-          />
+          <picture>
+            <source
+              media="(max-width:  31.25em)"
+              srcSet={require("../../assets/images/shared/mobile/image-best-gear.jpg")}
+            />
+            <source
+              media="(max-width:  62.5em)"
+              srcSet={require("../../assets/images/shared/tablet/image-best-gear.jpg")}
+            />
+            <img
+              className={styles.img}
+              src={require("../../assets/images/shared/desktop/image-best-gear.jpg")}
+              alt=""
+            />
+          </picture>
         </div>
       </div>
     </section>

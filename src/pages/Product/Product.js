@@ -46,11 +46,14 @@ const Product = () => {
       return (
         <div key={index} className={styles.suggested_card}>
           <div className={styles.suggested_img_box}>
-            <img
-              className={styles.suggested_img}
-              src={item.image.desktop}
-              alt={item.name}
-            />
+            <picture>
+              <source media="(max-width:  50em)" srcSet={item.image.mobile} />
+              <img
+                className={styles.suggested_img}
+                src={item.image.desktop}
+                alt={item.name}
+              />
+            </picture>
           </div>
           <div className={styles.suggested_text_box}>
             <p className={styles.suggested_product_name}>{item.name}</p>
@@ -69,11 +72,21 @@ const Product = () => {
       <div className={`${styles.product_details} ut-width`}>
         <div className={styles.top}>
           <div className={styles.img_box}>
-            <img
-              className={styles.img}
-              src={productData.image.desktop}
-              alt={productData.name}
-            />
+            <picture>
+              <source
+                media="(max-width:  31.25em)"
+                srcSet={productData.image.mobile}
+              />
+              <source
+                media="(max-width:  50em)"
+                srcSet={productData.image.tablet}
+              />
+              <img
+                className={styles.img}
+                src={productData.image.desktop}
+                alt={productData.name}
+              />
+            </picture>
           </div>
 
           <div className={styles.text_box}>

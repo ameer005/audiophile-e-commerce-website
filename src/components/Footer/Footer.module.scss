@@ -1,7 +1,17 @@
+@import "../../common/mixins.scss";
+
 .footer {
-  margin-top: 15rem;
+  margin-top: var(--margin-top-big);
   background-color: var(--color-secondary);
   padding: 6.4rem;
+
+  @include respond(tab-land) {
+    padding: 6.4rem 2.4rem;
+  }
+
+  @include respond(phone) {
+    padding: 6.4rem 0rem;
+  }
 }
 
 .nav {
@@ -10,12 +20,33 @@
   justify-content: space-between;
   margin-bottom: 3.2rem;
 
+  @include respond(tab-pot) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3.2rem;
+  }
+
+  @include respond(phone) {
+    align-items: center;
+    gap: 4.8rem;
+  }
+
   &__list {
     display: flex;
     gap: 3.2rem;
 
     font-size: 1.2rem;
     font-weight: 700;
+
+    @include respond(tab-pot) {
+      gap: 1.8rem;
+    }
+
+    @include respond(phone) {
+      flex-direction: column;
+      align-items: center;
+      gap: 2.4rem;
+    }
   }
 
   &__item {
@@ -40,6 +71,10 @@
 
 .logo {
   width: 13rem;
+
+  @include respond(phone) {
+    width: 15rem;
+  }
 }
 
 .bottom {
@@ -48,11 +83,23 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4.8rem;
+
+  @include respond(phone) {
+    justify-items: center;
+  }
 }
 
 .text {
   font-size: 1.5rem;
   line-height: 1.6;
+
+  @include respond(tab-land) {
+    grid-column: 1 / -1;
+  }
+
+  @include respond(phone) {
+    text-align: center;
+  }
 }
 
 .social_group {
@@ -61,6 +108,18 @@
   gap: 1.2rem;
   align-self: flex-end;
   justify-self: flex-end;
+
+  @include respond(tab-land) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  @include respond(phone) {
+    align-self: center;
+    justify-self: center;
+    grid-row: 3;
+    grid-column: 1 / -1;
+  }
 }
 
 .icon_social {
@@ -77,4 +136,9 @@
 
 .copyright_text {
   font-size: 1.6rem;
+
+  @include respond(phone) {
+    grid-column: 1 /-1;
+    grid-row: 2;
+  }
 }

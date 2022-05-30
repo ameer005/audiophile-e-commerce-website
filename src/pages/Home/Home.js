@@ -5,13 +5,24 @@ import ProductButton from "../../components/ProductButton/ProductButton";
 import Categories from "../../components/Categories/Categories";
 import FeaturesBox from "../../components/FeaturesBox/FeaturesBox";
 
+import { motion } from "framer-motion";
+
 const Home = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: "2" }}
+    >
       {/* HERO SECTION */}
       <section className={`${styles.section_hero} ut-align-center`}>
         <div className={`${styles.content_box} ut-width`}>
-          <div className={styles.box}>
+          <motion.div
+            className={styles.box}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: "1.6", duration: "1.3" }}
+          >
             <h3 className={styles.sub_heading}>new product</h3>
             <h1 className={styles.primary_heading}>XX99 MARK II HEADPHONES</h1>
             <p className={styles.hero_text}>
@@ -22,7 +33,7 @@ const Home = () => {
               class="orange"
               path="/headphones/xx99-mark-two-headphones"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -34,11 +45,22 @@ const Home = () => {
         <div className={`${styles.products} ut-width`}>
           <div className={styles.products_1}>
             <div className={styles.products_1__img_box}>
-              <img
-                className={styles.products_1__img}
-                src={require("../../assets/images/home/desktop/image-speaker-zx9.png")}
-                alt=""
-              />
+              <picture>
+                <source
+                  media="(max-width:  31.25em)"
+                  srcSet={require("../../assets/images/home/mobile/image-speaker-zx9.png")}
+                />
+                <source
+                  media="(max-width:  62.5em)"
+                  srcSet={require("../../assets/images/home/tablet/image-speaker-zx9.png")}
+                />
+
+                <img
+                  className={styles.products_1__img}
+                  src={require("../../assets/images/home/desktop/image-speaker-zx9.png")}
+                  alt=""
+                />
+              </picture>
             </div>
             <div className={styles.products_1__text_box}>
               <h2 className={styles.products_1__heading}>ZX9 SPEAKER</h2>
@@ -49,25 +71,49 @@ const Home = () => {
               <ProductButton class="black" path="/speakers/zx9-speaker" />
             </div>
           </div>
+
           <div className={styles.products_2}>
             <div className={styles.products_2__img_box}>
-              <img
-                className={styles.products_2__img}
-                src={require("../../assets/images/home/desktop/image-speaker-zx7.jpg")}
-                alt=""
-              />
+              <picture>
+                <source
+                  media="(max-width:  31.25em)"
+                  srcSet={require("../../assets/images/home/mobile/image-speaker-zx7.jpg")}
+                />
+                <source
+                  media="(max-width:  62.5em)"
+                  srcSet={require("../../assets/images/home/tablet/image-speaker-zx7.jpg")}
+                />
+
+                <img
+                  className={styles.products_2__img}
+                  src={require("../../assets/images/home/desktop/image-speaker-zx7.jpg")}
+                  alt=""
+                />
+              </picture>
             </div>
             <div className={styles.products_2__text_box}>
               <p className={styles.products_2__heading}>ZX7 SPEAKER</p>
               <ProductButton class="white" path="/speakers/zx7-speaker" />
             </div>
           </div>
+
           <div className={styles.products_3}>
-            <img
-              className={styles.products_3__img}
-              src={require("../../assets/images/home/desktop/image-earphones-yx1.jpg")}
-              alt=""
-            />
+            <picture>
+              <source
+                media="(max-width:  31.25em)"
+                srcSet={require("../../assets/images/home/mobile/image-earphones-yx1.jpg")}
+              />
+              <source
+                media="(max-width:  62.5em)"
+                srcSet={require("../../assets/images/home/tablet/image-earphones-yx1.jpg")}
+              />
+
+              <img
+                className={styles.products_3__img}
+                src={require("../../assets/images/home/desktop/image-earphones-yx1.jpg")}
+                alt=""
+              />
+            </picture>
           </div>
           <div className={styles.products_4}>
             <div className={styles.products_4__text_box}>
@@ -81,7 +127,7 @@ const Home = () => {
       {/* FEATUREs SECTION */}
 
       <FeaturesBox />
-    </>
+    </motion.div>
   );
 };
 

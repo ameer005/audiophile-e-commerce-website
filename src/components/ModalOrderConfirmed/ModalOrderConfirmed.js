@@ -7,12 +7,26 @@ import { Link } from "react-router-dom";
 import { emptyCart } from "../../features/product/productSlice";
 import { useDispatch } from "react-redux";
 
+import { motion } from "framer-motion";
+
 const ModalOrderConfirmed = (props) => {
   const dispatch = useDispatch();
 
   return ReactDom.createPortal(
-    <div className={styles.backdrop}>
-      <div onClick={(e) => e.stopPropagation()} className={styles.modal}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className={styles.backdrop}
+    >
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.25 }}
+        onClick={(e) => e.stopPropagation()}
+        className={styles.modal}
+      >
         <img className={styles.icon_check} src={checkIcon} alt="check" />
         <h2 className={styles.thanks_text}>THANK YOU FOR YOUR ORDER</h2>
         <p className={styles.confirm_text}>
@@ -50,14 +64,14 @@ const ModalOrderConfirmed = (props) => {
         </div>
 
         <Link
-          onClick={() => dispatch(emptyCart())}
           to="/"
+          onClick={() => dispatch(emptyCart())}
           className={`${styles.checkout_btn} product-btn product-btn--orange`}
         >
           Back To Home
         </Link>
-      </div>
-    </div>,
+      </motion.div>
+    </motion.div>,
     document.getElementById("modal-confirmed")
   );
 };

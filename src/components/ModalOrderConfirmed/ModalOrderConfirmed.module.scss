@@ -1,3 +1,5 @@
+@import "../../common/mixins.scss";
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -25,11 +27,19 @@
 
   display: flex;
   flex-direction: column;
+
+  @include respond(phone) {
+    margin: 2.4rem;
+  }
 }
 
 .icon_check {
   width: 6.4rem;
   margin-bottom: 1.8rem;
+
+  @include respond(phone) {
+    margin-bottom: 2.4rem;
+  }
 }
 
 .thanks_text {
@@ -50,18 +60,23 @@
 
 .item_container {
   display: flex;
-
   border-radius: 0.5rem;
-
   overflow: hidden;
-
   margin-bottom: 3.2rem;
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
 }
 
 .item_box {
   flex-basis: 55%;
   padding: 3.2rem 1.2rem;
   background-color: var(--color-grey-1);
+
+  @include respond(phone) {
+    padding: 3.2rem 2.8rem 3.2rem 2.4rem;
+  }
 }
 
 .item {
@@ -69,6 +84,11 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 1.8rem;
+
+  @include respond(phone) {
+    justify-content: flex-start;
+    gap: 0.4rem;
+  }
 }
 
 .more_items {
@@ -79,6 +99,10 @@
 
 .item_img {
   width: 6.4rem;
+
+  @include respond(phone) {
+    width: 8rem;
+  }
 }
 
 .item_name {
@@ -87,16 +111,29 @@
   margin-bottom: 0.8rem;
   font-weight: 700;
   max-width: 15ch;
+
+  @include respond(phone) {
+    font-size: 1.6rem;
+  }
 }
 
 .item_price {
   font-size: 1.2rem;
   font-weight: 700;
+
+  @include respond(phone) {
+    font-size: 1.6rem;
+  }
 }
 
 .item_quantity {
   font-size: 1.4rem;
   font-weight: 700;
+
+  @include respond(phone) {
+    margin-left: auto;
+    font-size: 1.8rem;
+  }
 }
 
 .total_box {
@@ -115,10 +152,19 @@
   letter-spacing: 0.2px;
   color: var(--color-text-light);
   margin-bottom: 1.6rem;
+
+  @include respond(phone) {
+    font-size: 1.6rem;
+    margin-bottom: 1.8rem;
+  }
 }
 
 .grand_total_amount {
   color: var(--color-grey-1);
   font-weight: 700;
   font-size: 1.3rem;
+
+  @include respond(phone) {
+    font-size: 1.6rem;
+  }
 }

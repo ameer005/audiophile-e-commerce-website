@@ -7,11 +7,17 @@ const ProductCard = (props) => {
   return (
     <>
       <div className={styles.img_box}>
-        <img
-          className={styles.img}
-          src={props.data.image.desktop}
-          alt={props.data.name}
-        />
+        <picture>
+          <source
+            media="(max-width:  31.25em)"
+            srcSet={props.data.image.mobile}
+          />
+          <img
+            className={styles.img}
+            src={props.data.image.desktop}
+            alt={props.data.name}
+          />
+        </picture>
       </div>
 
       <div className={styles.description_box}>

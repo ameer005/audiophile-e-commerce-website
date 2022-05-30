@@ -1,3 +1,5 @@
+@import "../../common/mixins.scss";
+
 .cart_items {
   display: flex;
   align-items: center;
@@ -9,6 +11,11 @@
   display: flex;
   align-items: center;
   gap: 1.4rem;
+
+  @include respond(phone) {
+    flex: 1;
+    gap: 2.4rem;
+  }
 }
 
 .item_img_box {
@@ -24,6 +31,10 @@
 .item_details_box {
   font-weight: 700;
   font-size: 1.3rem;
+
+  @include respond(phone) {
+    font-size: 1.4rem;
+  }
 }
 
 .item_name {

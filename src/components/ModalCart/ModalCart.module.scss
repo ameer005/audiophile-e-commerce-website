@@ -1,3 +1,4 @@
+@import "../../common/mixins.scss";
 .backdrop {
   position: fixed;
   top: 0;
@@ -11,6 +12,10 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+
+  @include respond(tab-land) {
+    justify-content: center;
+  }
 }
 
 .modal {
@@ -22,6 +27,10 @@
   margin: 10rem 20rem;
   background-color: white;
   border-radius: 0.5rem;
+
+  @include respond(tab-land) {
+    margin: 10rem 3.2rem;
+  }
 }
 
 .close {
@@ -105,4 +114,19 @@
   // padding: 1.4rem 3.2rem;
   display: flex;
   justify-content: center;
+}
+
+.empty_cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  &__icon {
+    fill: var(--color-black);
+    transform: scale(4);
+  }
 }

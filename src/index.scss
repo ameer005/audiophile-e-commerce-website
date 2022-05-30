@@ -1,3 +1,4 @@
+@import "./common/mixins.scss";
 *,
 *::after,
 *::before {
@@ -25,11 +26,20 @@
 
   --color-error: #cd2c2c;
   --color-input-border: #cfcfcf;
+
+  // SIZES
+  --margin-top-big: 15rem;
+  --margin-top-medium: 10rem;
+  --margin-top-small: 8rem;
 }
 
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
 }
 
 body {
@@ -78,6 +88,10 @@ li {
   cursor: pointer;
   text-align: center;
 
+  @include respond(phone) {
+    padding: 1.8rem 3.2rem;
+  }
+
   &--orange {
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -123,12 +137,24 @@ li {
   align-items: center;
   gap: 15rem;
 
+  @include respond(tab-land) {
+    gap: 3.2rem;
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
   &--1 {
     justify-content: flex-end;
   }
 
   &--2 {
     flex-direction: row-reverse;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
   }
 
   &--3 {

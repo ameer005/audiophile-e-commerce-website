@@ -1,15 +1,31 @@
+@import "../../common/mixins.scss";
+
 .features {
-  margin: 15rem 0 0 0;
+  margin-top: var(--margin-top-big);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 3.2rem;
+
+  @include respond(tab-land) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .text_box {
+  @include respond(tab-land) {
+    grid-row: 2;
+    text-align: center;
+  }
 }
 
 .img_box {
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .heading {
@@ -19,8 +35,17 @@
   letter-spacing: 1.5px;
   color: var(--color-black);
   margin-bottom: 3.2rem;
+
+  @include respond(phone) {
+    font-size: 3.2rem;
+  }
+
   span {
     color: var(--color-primary);
+  }
+
+  @include respond(tab-land) {
+    // padding: 0 10rem;
   }
 }
 .text {
@@ -28,4 +53,13 @@
   color: var(--color-text);
   line-height: 1.6;
   max-width: 48ch;
+
+  @include respond(tab-land) {
+    max-width: 100%;
+    padding: 0 2.4rem;
+  }
+
+  @include respond(phone) {
+    padding: 0;
+  }
 }

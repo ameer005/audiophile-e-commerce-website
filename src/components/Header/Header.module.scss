@@ -1,5 +1,8 @@
+@import "../../common/mixins.scss";
+
 .header {
   background-color: var(--color-secondary);
+  position: relative;
 }
 
 .nav {
@@ -10,12 +13,29 @@
   align-items: center;
   justify-content: space-between;
 
+  @include respond(tab-land) {
+    justify-content: stretch;
+    gap: 4.8rem;
+  }
+
+  @include respond(tab-pot) {
+    gap: 3.8rem;
+  }
+
+  @include respond(phone) {
+    justify-content: space-between;
+  }
+
   &__list {
     display: flex;
     gap: 4.2rem;
 
     font-size: 1.4rem;
     font-weight: 700;
+
+    @include respond(tab-land) {
+      display: none;
+    }
   }
 
   &__item {
@@ -38,12 +58,29 @@
   color: var(--color-primary);
 }
 
+.menu {
+  display: none;
+  width: 1.6rem;
+  cursor: pointer;
+  @include respond(tab-land) {
+    display: block;
+  }
+}
+
 .logo {
   width: 14rem;
 }
 
 .cart_group {
   position: relative;
+
+  @include respond(tab-land) {
+    margin-left: auto;
+  }
+
+  @include respond(phone) {
+    margin: 0;
+  }
 }
 
 .cart_quantity {

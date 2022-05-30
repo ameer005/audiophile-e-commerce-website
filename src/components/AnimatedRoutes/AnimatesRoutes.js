@@ -7,19 +7,23 @@ import Home from "../../pages/Home/Home";
 import Product from "../../pages/Product/Product";
 import Speakers from "../../pages/Speakers/Speakers";
 
+import { AnimatePresence } from "framer-motion";
+
 const AnimatesRoutes = () => {
   const location = useLocation();
   return (
-    <Routes location={location} key={location.pathname}>
-      <Route path="/" exact element={<Home />} />
-      <Route exact path="/headphones" element={<Headphones />} />
-      <Route exact path="/speakers" element={<Speakers />} />
-      <Route exact path="/earphones" element={<Earphones />} />
-      <Route exact path="/headphones/:product" element={<Product />} />
-      <Route exact path="/speakers/:product" element={<Product />} />
-      <Route exact path="/earphones/:product" element={<Product />} />
-      <Route exact path="/checkout" element={<Checkout />} />
-    </Routes>
+    <AnimatePresence exitBeforeEnter>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" exact element={<Home />} />
+        <Route exact path="/headphones" element={<Headphones />} />
+        <Route exact path="/speakers" element={<Speakers />} />
+        <Route exact path="/earphones" element={<Earphones />} />
+        <Route exact path="/headphones/:product" element={<Product />} />
+        <Route exact path="/speakers/:product" element={<Product />} />
+        <Route exact path="/earphones/:product" element={<Product />} />
+        <Route exact path="/checkout" element={<Checkout />} />
+      </Routes>
+    </AnimatePresence>
   );
 };
 

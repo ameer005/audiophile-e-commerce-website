@@ -7,9 +7,13 @@ import currencyFormatter from "../../utils/currencyFormatter";
 
 import ModalOrderConfirmed from "../../components/ModalOrderConfirmed/ModalOrderConfirmed";
 
+import { AnimatePresence } from "framer-motion";
+
 const Checkout = () => {
   const cartItems = useSelector((state) => state.products.cart);
   const [showModal, setShowModal] = useState(false);
+
+  if (!cartItems.length) return;
 
   const onSubmit = (data) => {
     console.log(data);
@@ -76,13 +80,15 @@ const Checkout = () => {
             Checkout
           </button>
         </div>
-        {showModal ? (
-          <ModalOrderConfirmed
-            grandTotal={currencyFormatter.format(grandTotal)}
-            data={cartItems}
-            setShowModal={setShowModal}
-          />
-        ) : null}
+        <AnimatePresence>
+          {showModal ? (
+            <ModalOrderConfirmed
+              grandTotal={currencyFormatter.format(grandTotal)}
+              data={cartItems}
+              setShowModal={setShowModal}
+            />
+          ) : null}
+        </AnimatePresence>
       </div>
     </div>
   );

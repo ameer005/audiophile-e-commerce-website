@@ -7,7 +7,12 @@ import earphones from "../../assets/images/shared/desktop/image-earphones.png";
 import arrowR from "../../assets/icons/icon-arrow-right.svg";
 import { Link } from "react-router-dom";
 
-const Categories = () => {
+const Categories = (props) => {
+  const hideMenu = () => {
+    if (!props.setShowMenu) return;
+
+    props.setShowMenu(false);
+  };
   return (
     <section className={`${styles.section_category} ut-align-center`}>
       <div className={`${styles.categories} ut-width`}>
@@ -21,7 +26,11 @@ const Categories = () => {
             />
           </div>
           <p className={styles.category_name}>Headphones</p>
-          <Link className={styles.category_link} to="/headphones">
+          <Link
+            onClick={hideMenu}
+            className={styles.category_link}
+            to="/headphones"
+          >
             shop
             <img className={styles.icon_arrow} src={arrowR} alt="arrow icon" />
           </Link>
@@ -37,7 +46,11 @@ const Categories = () => {
             />
           </div>
           <p className={styles.category_name}>Speakers</p>
-          <Link className={styles.category_link} to="/speakers">
+          <Link
+            onClick={hideMenu}
+            className={styles.category_link}
+            to="/speakers"
+          >
             shop{" "}
             <img className={styles.icon_arrow} src={arrowR} alt="arrow icon" />
           </Link>
@@ -53,7 +66,11 @@ const Categories = () => {
             />
           </div>
           <p className={styles.category_name}>Earphones</p>
-          <Link className={styles.category_link} to="/earphones">
+          <Link
+            onClick={hideMenu}
+            className={styles.category_link}
+            to="/earphones"
+          >
             shop
             <img className={styles.icon_arrow} src={arrowR} alt="arrow icon" />
           </Link>
