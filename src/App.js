@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { ToastContainer, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import styles from "./App.module.scss";
 import AnimatesRoutes from "./components/AnimatedRoutes/AnimatesRoutes";
@@ -16,6 +18,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <ToastContainer />
       <Header />
       <main>
         <AnimatesRoutes />

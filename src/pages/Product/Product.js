@@ -3,6 +3,7 @@ import styles from "./Product.module.scss";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { toast, Slide } from "react-toastify";
 
 import Categories from "../../components/Categories/Categories";
 import FeaturesBox from "../../components/FeaturesBox/FeaturesBox";
@@ -25,6 +26,17 @@ const Product = () => {
 
   const cart = () => {
     dispatch(addToCart({ ...productData, quantity: quantity }));
+    toast.success(`Item '${productData.name}' added to the cart`, {
+      transition: Slide,
+      position: "top-left",
+      autoClose: 800,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
   };
 
   const renderAccessories = () => {
