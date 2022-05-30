@@ -169,6 +169,11 @@
   display: grid;
 
   gap: 1.8rem;
+
+  @include respond(phone) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .gallery_img_box_1 {

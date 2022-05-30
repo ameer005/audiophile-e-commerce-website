@@ -145,25 +145,44 @@ const Product = () => {
 
             <div className={styles.gallery}>
               <div className={styles.gallery_img_box_1}>
-                <img
-                  className={styles.gallery_img}
-                  src={productData.gallery.first.desktop}
-                  alt="gallery img 1"
-                />
+                <picture>
+                  <source
+                    media="(max-width:  31.25em)"
+                    srcSet={productData.gallery.first.mobile}
+                  />
+
+                  <img
+                    className={styles.gallery_img}
+                    src={productData.gallery.first.desktop}
+                    alt="gallery img 1"
+                  />
+                </picture>
               </div>
               <div className={styles.gallery_img_box_2}>
-                <img
-                  className={styles.gallery_img}
-                  src={productData.gallery.second.desktop}
-                  alt="gallery img 1"
-                />
+                <picture>
+                  <source
+                    media="(max-width:  31.25em)"
+                    srcSet={productData.gallery.second.mobile}
+                  />
+                  <img
+                    className={styles.gallery_img}
+                    src={productData.gallery.second.desktop}
+                    alt="gallery img 1"
+                  />
+                </picture>
               </div>
               <div className={styles.gallery_img_box_3}>
-                <img
-                  className={styles.gallery_img}
-                  src={productData.gallery.third.desktop}
-                  alt="gallery img 1"
-                />
+                <picture>
+                  <source
+                    media="(max-width:  31.25em)"
+                    srcSet={productData.gallery.third.mobile}
+                  />
+                  <img
+                    className={styles.gallery_img}
+                    src={productData.gallery.third.desktop}
+                    alt="gallery img 1"
+                  />
+                </picture>
               </div>
             </div>
 
