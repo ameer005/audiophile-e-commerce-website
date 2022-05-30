@@ -33,12 +33,17 @@
   --margin-top-small: 8rem;
 
   // tostify
-  --toastify-toast-min-height: 4.8rem !important;
-  --toastify-toast-max-height: 4.8rem !important;
+  --toastify-toast-min-height: 5.4rem !important;
+  --toastify-toast-max-height: 5.4rem !important;
   --toastify-font-family: "Manrope", sans-serif !important;
   --toastify-color-dark: #38a169 !important;
   --toastify-color-success: #38a169 !important;
   --toastify-icon-color-success: #38a169 !important;
+
+  @include respond(phone) {
+    --toastify-toast-min-height: 6.4rem !important;
+    --toastify-toast-max-height: 6.4rem !important;
+  }
 }
 
 html {

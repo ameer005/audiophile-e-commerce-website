@@ -20,7 +20,10 @@ const Categories = (props) => {
       <div className={`${styles.categories} ut-width`}>
         {/* Card 1 */}
         <div
-          onClick={() => navigate("/headphones")}
+          onClick={() => {
+            navigate("/headphones");
+            hideMenu();
+          }}
           className={styles.category_card}
         >
           <div className={styles.img_box}>
@@ -43,7 +46,10 @@ const Categories = (props) => {
 
         {/* Card 2 */}
         <div
-          onClick={() => navigate("/speakers")}
+          onClick={() => {
+            navigate("/speakers");
+            hideMenu();
+          }}
           className={styles.category_card}
         >
           <div className={styles.img_box}>
@@ -66,7 +72,10 @@ const Categories = (props) => {
 
         {/* Card 3 */}
         <div
-          onClick={() => navigate("/earphones")}
+          onClick={() => {
+            navigate("/earphones");
+            hideMenu();
+          }}
           className={styles.category_card}
         >
           <div className={styles.img_box}>
